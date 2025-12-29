@@ -77,11 +77,15 @@ for student_id, student_name, gender, parent_name, parent_phone in students:
     for term_name, year in terms:
         fees_paid = random.choice(["Yes", "No"])
 
-        payment_date = (
-            datetime(2024, 1, 1) + timedelta(days=random.randint(1, 120))
-            if fees_paid == "Yes"
-            else pd.NaT
-        )
+        # payment_date = (
+        #     datetime(2024, 1, 1) + timedelta(days=random.randint(1, 120))
+        #     if fees_paid == "Yes"
+        #     else pd.NaT
+        # )
+        #The above code generates a timestamp thats incompatible with Postgres date format
+        #The one below is better conforming:
+
+          payment_date = ((datetime(2024, 1, 1) + timedelta(days=random.randint(1, 120))).strftime('%Y-%m-%d') if fees_paid == "Yes" else '')
 
         for subject_name, subject_teacher in subjects.items():
             ca1 = np.random.randint(5, 20)

@@ -104,7 +104,12 @@ for student_id, student_name, gender, parent_name, parent_phone in students:
             exam = np.random.randint(30, 60)
 
             total = ca1 + ca2 + exam
+            # grade = "A" if total >= 70 else "B" if total >= 60 else "C" if total >= 50 else "F"
+            #Creating some intentional wrong grades. Just a few if random neumber is less than 0.2
             grade = "A" if total >= 70 else "B" if total >= 60 else "C" if total >= 50 else "F"
+
+            if random.random()<0.2:
+                grade = "A" if total >= 70 else "B" if total >= 60 else "C" if total >= 50 else "A"
 
             rows.append([
                 student_id, student_name, gender,

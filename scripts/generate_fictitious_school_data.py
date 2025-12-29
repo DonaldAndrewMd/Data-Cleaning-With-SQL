@@ -20,6 +20,13 @@ last_names=['Adeoye','Adebayo','Ogunleye','Adewale','Olawale','Akinlade','Ogunye
 #     "Lawal": ["Lawal", "Lawall", "Lawaal"],
 #     "Obi": ["Obi", "Obie", "Obii"]
 # }
+last_name_variants = {
+    "Adeoye": ["Adeye", "Adoye"],
+    "Adebayo": ["Adebyo", "Adebayi", "Adebay"],
+    "Danladi": ["Danladil", "Danlady", "Dalandi"],
+    "Okeke": ["Okayke", "Okeka", "Okike"],
+    "Momoh": ["Momo", "Momohh", "Momorr"]
+}
 
 parent_titles = [
     "Mr", "Mr.", "Mister", "MR", "mr",

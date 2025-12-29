@@ -56,8 +56,12 @@ students = []
 for i in range(num_students):
     fname = random.choice(first_names)
 
-    canonical_lname = random.choice(list(last_name_variants.keys()))
-    lname = random.choice(last_name_variants[canonical_lname])
+    # canonical_lname = random.choice(list(last_name_variants.keys()))
+    # lname = random.choice(last_name_variants[canonical_lname])
+     #Creating some intentional typo in names
+    lname = random.choice(last_names)
+    if random.random()<0.3:
+        lname = random.choice([last_name_variants[lname] if lname in last_name_variants else [lname]][0])
 
     # Random casing / spaces
     if random.random() < 0.2:
